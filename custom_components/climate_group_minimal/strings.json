@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Climate Group Minimal Configuration",
+        "description": "Create a group of climate entities that can be controlled as a single unit. The group will aggregate temperature readings and synchronize control commands across all member devices.",
+        "data": {
+          "name": "Group Name",
+          "entities": "Climate Entities",
+          "average_option": "Temperature Averaging Method",
+          "round_option": "Temperature Rounding",
+          "hvac_mode_strategy": "HVAC Mode Strategy"
+        },
+        "data_description": {
+          "name": "Enter a descriptive name for this Climate Group (e.g., 'Living Room Climate' or 'Upstairs Heating').",
+          "entities": "Select the climate devices to include in this group.",
+          "average_option": "Choose the method for calculating the group's target temperature.",
+          "round_option": "Select the rounding precision for temperature values.",
+          "hvac_mode_strategy": "Choose the strategy for determining the group's HVAC mode."
+        }
+      }
+    },
+    "error": {
+      "no_entities": "At least one climate entity must be selected to create a group."
+    },
+    "abort": {
+      "already_configured": "A Climate Group with this configuration already exists."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Configure Climate Group Minimal Options",
+        "description": "Modify the settings for your Climate Group. Changes will take effect immediately and affect how temperatures are calculated and displayed.",
+        "data": {
+          "entities": "Climate Entities",
+          "average_option": "Temperature Averaging Method",
+          "round_option": "Temperature Rounding",
+          "hvac_mode_strategy": "HVAC Mode Strategy"
+        },
+        "data_description": {
+          "entities": "Add or remove climate entities from this group. Removing entities will exclude them from temperature calculations and control commands.",
+          "average_option": "Change the method for calculating target temperatures across group members.",
+          "round_option": "Adjust the temperature precision for the group.",
+          "hvac_mode_strategy": "Choose the strategy for determining the group's HVAC mode."
+        }
+      }
+    },
+    "error": {
+      "no_entities": "At least one climate entity must remain in the group."
+    },
+    "abort": {
+      "no_changes": "No changes were detected in the configuration."
+    }
+  },
+  "selector": {
+    "average_option": {
+      "options": {
+        "mean": "Mean (Average)",
+        "median": "Median (Middle Value)",
+        "min": "Minimum",
+        "max": "Maximum"
+      }
+    },
+    "round_option": {
+      "options": {
+        "none": "No Rounding (Exact Values)",
+        "half": "Half Degree (0.5°)",
+        "integer": "Whole Degree (1°)"
+      }
+    },
+    "hvac_mode_strategy": {
+      "options": {
+        "normal": "Normal (Group is off when all members are off.)",
+        "off_priority": "Off Priority (Group is off as soon as any member is off.)",
+        "auto": "Auto (Dynamic: Off Priority when active, Normal when turned off.)"
+      }
+    }
+  },
+  "entity": {
+    "climate": {
+      "climate_group_minimal": {
+        "name": "Climate Group Minimal"
+      }
+    }
+  }
+}

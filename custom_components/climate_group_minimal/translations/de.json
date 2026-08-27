@@ -1,0 +1,80 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Climate Group Minimal konfigurieren",
+        "description": "Erstelle eine Gruppe von Klimageräten, die als eine einzelne Einheit gesteuert werden können. Die Gruppe aggregiert Temperaturwerte und synchronisiert Steuerbefehle über alle zugehörigen Geräte hinweg.",
+        "data": {
+          "name": "Gruppenname",
+          "entities": "Klimageräte",
+          "average_option": "Methode zur Temperaturberechnung",
+          "round_option": "Temperaturrundung",
+          "hvac_mode_strategy": "HVAC-Modus-Strategie"
+        },
+        "data_description": {
+          "name": "Gib einen aussagekräftigen Namen für diese Klimagruppe ein (z. B. 'Klima Wohnzimmer' oder 'Heizung Obergeschoss').",
+          "entities": "Wähle die Klimageräte aus, die in diese Gruppe aufgenommen werden sollen.",
+          "average_option": "Wähle die Methode zur Berechnung der Zieltemperatur der Gruppe.",
+          "round_option": "Wähle die Rundungsgenauigkeit für die Temperaturwerte.",
+          "hvac_mode_strategy": "Wähle die Strategie zur Bestimmung des HVAC-Modus (Heiz-/Kühlmodus) der Gruppe."
+        }
+      }
+    },
+    "error": {
+      "no_entities": "Es muss mindestens ein Klimagerät ausgewählt werden, um eine Gruppe zu erstellen."
+    },
+    "abort": {
+      "already_configured": "Eine Klimagruppe mit dieser Konfiguration existiert bereits."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Climate Group Minimal Optionen konfigurieren",
+        "description": "Ändere die Einstellungen für deine Klimagruppe. Änderungen werden sofort wirksam und beeinflussen, wie Temperaturen berechnet und angezeigt werden.",
+        "data": {
+          "entities": "Klimageräte",
+          "average_option": "Methode zur Temperaturberechnung",
+          "round_option": "Temperaturrundung",
+          "hvac_mode_strategy": "HVAC-Modus-Strategie"
+        },
+        "data_description": {
+          "entities": "Füge der Gruppe Klimageräte hinzu oder entferne sie. Entfernte Geräte werden von den Temperaturberechnungen und Steuerbefehlen ausgeschlossen.",
+          "average_option": "Ändere die Methode zur Berechnung der Zieltemperaturen für die Gruppenmitglieder.",
+          "round_option": "Passe die Temperaturgenauigkeit (Rundung) für die Gruppe an.",
+          "hvac_mode_strategy": "Wähle die Strategie zur Bestimmung des HVAC-Modus (Heiz-/Kühlmodus) der Gruppe."
+        }
+      }
+    },
+    "error": {
+      "no_entities": "Es muss mindestens ein Klimagerät in der Gruppe verbleiben."
+    },
+    "abort": {
+      "no_changes": "Es wurden keine Änderungen an der Konfiguration vorgenommen."
+    }
+  },
+  "selector": {
+    "average_option": {
+      "options": {
+        "mean": "Mittelwert (Durchschnitt)",
+        "median": "Median (Zentralwert)",
+        "min": "Minimum",
+        "max": "Maximum"
+      }
+    },
+    "round_option": {
+      "options": {
+        "none": "Keine Rundung (Exakte Werte)",
+        "half": "Halbes Grad (0,5°)",
+        "integer": "Ganzes Grad (1°)"
+      }
+    },
+    "hvac_mode_strategy": {
+      "options": {
+        "normal": "Normal (Gruppe ist aus, wenn alle Mitglieder aus sind.)",
+        "off_priority": "Off-Priorität (Gruppe ist aus, sobald ein Mitglied aus ist.)",
+        "auto": "Auto (Wechselt dynamisch: Off-Priorität beim Heizen, Normal bei Off.)"
+      }
+    }
+  }
+}

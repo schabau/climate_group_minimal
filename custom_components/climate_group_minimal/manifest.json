@@ -1,0 +1,13 @@
+{
+  "domain": "climate_group_minimal",
+  "name": "Climate Group Minimal",
+  "codeowners": ["@schabau"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/schabau/climate_group_minimal",
+  "issue_tracker": "https://github.com/schabau/climate_group_minimal/issues",
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "requirements": [],
+  "version": "0.1.0"
+}
