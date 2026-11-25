@@ -139,13 +139,13 @@ class ClimateGroup(GroupEntity, ClimateEntity):
         self._last_active_hvac_mode = None
 
         self._attr_supported_features = DEFAULT_SUPPORTED_FEATURES
-        self._attr_temperature_unit = UnitOfTemperature.CELSIUS
+        self._attr_native_temperature_unit = UnitOfTemperature.CELSIUS
 
         self._attr_available = False
         self._attr_assumed_state = True
         self._attr_extra_state_attributes = {}
 
-        self._attr_current_temperature = None
+        self._attr_native_current_temperature = None
         self._attr_native_target_temperature = None
         self._attr_target_temperature_step = None
         self._attr_native_target_temperature_low = None
@@ -224,10 +224,10 @@ class ClimateGroup(GroupEntity, ClimateEntity):
 
             self._attr_available = True
             self._attr_assumed_state = not states_equal(states)
-            self._attr_temperature_unit = self.hass.config.units.temperature_unit
+            self._attr_native_temperature_unit = self.hass.config.units.temperature_unit
 
             # Ist-Temperatur = Mittelwert aller Thermostate
-            self._attr_current_temperature = reduce_attribute(
+            self._attr_native_current_temperature = reduce_attribute(
                 states, ATTR_CURRENT_TEMPERATURE, reduce=lambda *data: mean(data)
             )
 
