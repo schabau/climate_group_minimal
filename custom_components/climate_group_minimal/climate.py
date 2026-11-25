@@ -146,10 +146,10 @@ class ClimateGroup(GroupEntity, ClimateEntity):
         self._attr_extra_state_attributes = {}
 
         self._attr_current_temperature = None
-        self._attr_target_temperature = None
+        self._attr_native_target_temperature = None
         self._attr_target_temperature_step = None
-        self._attr_target_temperature_low = None
-        self._attr_target_temperature_high = None
+        self._attr_native_target_temperature_low = None
+        self._attr_native_target_temperature_high = None
         self._attr_min_temp = None
         self._attr_max_temp = None
 
@@ -232,30 +232,30 @@ class ClimateGroup(GroupEntity, ClimateEntity):
             )
 
             # Soll-Temperatur = Gemittelter Wert nach eingestellter Option
-            self._attr_target_temperature = reduce_attribute(
+            self._attr_native_target_temperature = reduce_attribute(
                 states, ATTR_TEMPERATURE, reduce=lambda *data: self._average_calc(data)
             )
-            if self._attr_target_temperature is not None:
-                self._attr_target_temperature = mean_round(
-                    self._attr_target_temperature, self._round_option
+            if self._attr_native_target_temperature is not None:
+                self._attr_native_target_temperature = mean_round(
+                    self._attr_native_target_temperature, self._round_option
                 )
 
-            self._attr_target_temperature_low = reduce_attribute(
+            self._attr_native_target_temperature_low = reduce_attribute(
                 states, ATTR_TARGET_TEMP_LOW, reduce=lambda *data: self._average_calc(data)
             )
-            if self._attr_target_temperature_low is not None:
-                self._attr_target_temperature_low = mean_round(
-                    self._attr_target_temperature_low, self._round_option
+            if self._attr_native_target_temperature_low is not None:
+                self._attr_native_target_temperature_low = mean_round(
+                    self._attr_native_target_temperature_low, self._round_option
                 )
 
-            self._attr_target_temperature_high = reduce_attribute(
+            self._attr_native_target_temperature_high = reduce_attribute(
                 states,
                 ATTR_TARGET_TEMP_HIGH,
                 reduce=lambda *data: self._average_calc(data),
             )
-            if self._attr_target_temperature_high is not None:
-                self._attr_target_temperature_high = mean_round(
-                    self._attr_target_temperature_high, self._round_option
+            if self._attr_native_target_temperature_high is not None:
+                self._attr_native_target_temperature_high = mean_round(
+                    self._attr_native_target_temperature_high, self._round_option
                 )
 
             self._attr_target_temperature_step = reduce_attribute(
