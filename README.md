@@ -4,14 +4,19 @@ A lightweight, no-frills helper tool for Climate Groups in Home Assistant. Speci
 
 ## Installation
 
-### Option 1: HACS (Custom Repository)
+### Option 1: Home Assistant Marketplace (Home Assistant 2026.11 and newer)
+* Open Home Assistant and go to **Settings -> Marketplace**
+* Click **Add from link** and Paste `https://github.com/schabau/climate_group_minimal` as **Integration**.
+* Search for **Climate Group Minimal** in the Marketplace, install it, and then restart Home Assistant.
+
+### Option 2: HACS (Custom Repository)
 * Open HACS in Home Assistant.
 * Click on the 3 dots in the top right corner and select **Custom repositories**.
 * Paste the URL of this GitHub Repository. `https://github.com/schabau/climate_group_minimal`
 * Select **Integration** as the Category and click **Add**.
 * Search for "Climate Group Minimal", click **Download**, and restart Home Assistant.
 
-### Option 2: Manual Installation
+### Option 3: Manual Installation
 * Download the latest release from GitHub.
 * Copy the `climate_group_minimal` folder into your `custom_components` directory.
 * Restart Home Assistant.
