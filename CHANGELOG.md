@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 - 11/2026
+
+*   Replaced deprecated attributes for compatibility with future Home Assistant releases (2027.11+).
+*   Added Home Assistant Marketplace (2026.11+) installation instructions.
+
 ## 0.1.0 - 08/2026
 
 First version of Climate Group Minimal for Home Assistant, forked from Climate Group Helper.
